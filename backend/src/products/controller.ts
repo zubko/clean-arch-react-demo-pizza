@@ -1,0 +1,20 @@
+import { Request, Response, NextFunction } from "express";
+import { products } from "./data";
+
+export const getProducts = (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  return res.status(200).json({ products });
+};
+
+export const getProduct = (req: Request, res: Response, next: NextFunction) => {
+  const id: string = req.params.id;
+  const product = products.find((p) => p.id === id);
+  if (product) {
+    return res.status(200).json({ product });
+  } else {
+    return res.status(404).end();
+  }
+};
