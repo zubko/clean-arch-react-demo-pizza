@@ -1,4 +1,7 @@
 {
+  "name": "clean-arch-demo-pizza",
+  "license": "MIT",
+  "private": true,
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
