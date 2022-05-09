@@ -1,8 +1,17 @@
-import { ItemsViewModel } from "../presenters/items.presenter";
+export type ItemComponent = "menu-item" | "pizza-item";
 
-export const Items: React.FC<{ viewModel: ItemsViewModel }> = ({
-  viewModel: { items },
-}) =>
+export type ItemViewProps = {
+  id: string;
+  title: string;
+  price: string;
+  component: ItemComponent;
+};
+
+export type ItemsViewProps = {
+  items: ItemViewProps[];
+};
+
+export const Items: React.FC<ItemsViewProps> = ({ items }) =>
   !items.length ? (
     <div>Loading...</div>
   ) : (

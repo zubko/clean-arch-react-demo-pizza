@@ -1,25 +1,13 @@
 import { map, switchMap } from "rxjs";
 import { getProductsByCategory$ } from "@app/core/repository/products.repository";
 import { currentCategory$ } from "../repository/menu.repository";
-
-export type ItemComponent = "menu-item" | "pizza-item";
-
-export type ItemViewModel = {
-  id: string;
-  title: string;
-  price: string;
-  component: ItemComponent;
-};
-
-export type ItemsViewModel = {
-  items: ItemViewModel[];
-};
+import { ItemsViewProps } from "../views/items.view";
 
 export const getCurrentItems$ = currentCategory$.pipe(
   switchMap((category) =>
     getProductsByCategory$(category).pipe(
       map(
-        (products): ItemsViewModel => ({
+        (products): ItemsViewProps => ({
           items: products.map(({ id, name, price, category }) => ({
             id,
             title: name,

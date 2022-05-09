@@ -4,26 +4,19 @@ import {
   currentCategory$,
   updateCurrentCategory,
 } from "../repository/menu.repository";
-
-export type CategoryViewModel = {
-  id: ProductCategory;
-  title: string;
-  current: boolean;
-};
-
-export type CategoriesViewModel = {
-  categories: CategoryViewModel[];
-  onSelectCategory: (id: ProductCategory) => void;
-};
+import {
+  CategoriesViewProps,
+  CategoryViewProps,
+} from "../views/categories.view";
 
 const Categories: ProductCategory[] = ["pizza", "drink", "side"];
 const Translations = { en: { pizza: "Pizza", drink: "Drinks", side: "Sides" } };
 
 export const getCategories$ = currentCategory$.pipe(
   map(
-    (currentCategory): CategoriesViewModel => ({
+    (currentCategory): CategoriesViewProps => ({
       categories: Categories.map(
-        (id): CategoryViewModel => ({
+        (id): CategoryViewProps => ({
           id,
           title: Translations.en[id],
           current: id === currentCategory,

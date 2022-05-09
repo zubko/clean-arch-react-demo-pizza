@@ -10,8 +10,8 @@ export const MenuWireframe = () => {
   const [items] = useObservable(getCurrentItems$);
   return (
     <MenuPage>
-      <Categories viewModel={categories} />
-      <Items viewModel={items} />
+      <Categories {...categories} />
+      <Items {...items} />
     </MenuPage>
   );
 };
