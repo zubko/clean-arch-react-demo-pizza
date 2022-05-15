@@ -6,7 +6,9 @@ export const getProducts = (
   res: Response,
   next: NextFunction
 ) => {
-  return res.status(200).json({ products });
+  return Math.random() > 0.75
+    ? res.status(200).json({ products })
+    : res.status(404).end();
 };
 
 export const getProduct = (req: Request, res: Response, next: NextFunction) => {
