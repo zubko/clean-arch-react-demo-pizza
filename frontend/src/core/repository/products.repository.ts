@@ -4,62 +4,59 @@ import {
   setEntities,
   withEntities,
 } from "@ngneat/elf-entities";
-import { persistState, localStorageStrategy } from "@ngneat/elf-persist-state";
+import {
+  excludeKeys,
+  localStorageStrategy,
+  persistState,
+} from "@ngneat/elf-persist-state";
+import {
+  createRequestsStatusOperator,
+  selectIsRequestPending,
+  updateRequestStatus,
+  withRequestsStatus,
+  selectRequestStatus,
+} from "@ngneat/elf-requests";
+import { catchError, delay, of, tap } from "rxjs";
 
 import { Product, ProductCategory } from "../entities/Product";
+import { getProducts } from "../services/products.service";
 
-const store = createStore({ name: "products" }, withEntities<Product>());
-// persistState(store, { storage: localStorageStrategy });
+const store = createStore(
+  { name: "products" },
+  withEntities<Product>(),
+  withRequestsStatus<"products">()
+);
+persistState(store, {
+  storage: localStorageStrategy,
+  source: (store) => store.pipe(excludeKeys(["requestsStatus"])),
+});
 
-export const getProductsByCategory$ = (category: ProductCategory) =>
+const trackProductsRequestsStatus = createRequestsStatusOperator(store);
+export const productsRequestPending$ = store.pipe(
+  selectIsRequestPending("products")
+);
+export const productsRequestStatus$ = store.pipe(
+  selectRequestStatus("products")
+);
+
+export const productsByCategory$ = (category: ProductCategory) =>
   store.pipe(selectManyByPredicate((product) => product.category === category));
 
 export const setProducts = (products: Product[]) =>
-  store.update(setEntities(products));
+  store.update(
+    setEntities(products),
+    updateRequestStatus("products", "success")
+  );
 
-setTimeout(() => {
-  setProducts([
-    {
-      id: "1",
-      category: "pizza",
-      name: "Margarita",
-      price: 10,
-      image: "",
-    },
-    {
-      id: "2",
-      category: "pizza",
-      name: "Pepperoni",
-      price: 15,
-      image: "",
-    },
-    {
-      id: "3",
-      category: "pizza",
-      name: "Salami",
-      price: 20,
-      image: "",
-    },
-    {
-      id: "4",
-      category: "drink",
-      name: "Cola",
-      price: 2,
-      image: "",
-    },
-    {
-      id: "5",
-      category: "drink",
-      name: "Juice",
-      price: 5,
-      image: "",
-    },
-    {
-      id: "6",
-      category: "side",
-      name: "Sauce",
-      price: 1,
-      image: "",
-    },
-  ]);
-}, 2000);
+export const updateProducts = () => {
+  getProducts()
+    .pipe(
+      tap(setProducts),
+      trackProductsRequestsStatus("products"),
+      catchError((err) => {
+        console.warn("Products error:", err);
+        return "error";
+      })
+    )
+    .subscribe();
+};

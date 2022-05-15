@@ -1760,6 +1760,11 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
+"@ngneat/elf-devtools@^1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@ngneat/elf-devtools/-/elf-devtools-1.2.1.tgz#8b137328df8a328cc472f9609477282dc506883b"
+  integrity sha512-emoTCmOxzFI3H04HGpagfaMY9OzmoCvTLoKGvTtN0Fx+JHLhj/HXzSzirAxrkWUwmNTAhCcOmbPPNjAeL1QAuA==
+
 "@ngneat/elf-entities@^4.3.1":
   version "4.3.1"
   resolved "https://registry.yarnpkg.com/@ngneat/elf-entities/-/elf-entities-4.3.1.tgz#d1b9465dccff1c6c1e28b1de10787aaac8e1a244"
@@ -1770,6 +1775,11 @@
   resolved "https://registry.yarnpkg.com/@ngneat/elf-persist-state/-/elf-persist-state-1.1.1.tgz#ccd5f15128000a816db09b34e26d8d97d4451a04"
   integrity sha512-19riZeAul29RDpoizeFYJtRddVUiTVGZLKivhZPVzeezLuH6dJTpkd1kLy3jGhlS6UOQX4NKJUl72HqYGiF0zA==
 
+"@ngneat/elf-requests@^1.1.2":
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/@ngneat/elf-requests/-/elf-requests-1.1.2.tgz#decf6f7a2abd3916015a7049c14fd05f42d0a56b"
+  integrity sha512-rUhDXQXUUes6pg3T9ipHRNtEy/xhitUr8fLMHSB8DfPicd7x9LwmR+CbnWZy9TbPOR8/nQxedLc6PrdhmRa+UA==
+
 "@ngneat/elf@^1.5.6":
   version "1.5.6"
   resolved "https://registry.yarnpkg.com/@ngneat/elf/-/elf-1.5.6.tgz#63e684a89433f65883ee505cc2c747b7c5abc14f"
@@ -1779,11 +1789,6 @@
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@ngneat/react-rxjs/-/react-rxjs-1.1.0.tgz#bb7b69da64e4b672463e15a21f30735a0d568a26"
   integrity sha512-dxZNnnv+9Fsf/ipoXd/jaCIhz6ruxDFeUaX80vFa5a+Y/v3iyjgEFEQyZEfGDciQspabLt6XLHNDrMJAHV/03w==
-
-"@ngneat/use-observable@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@ngneat/use-observable/-/use-observable-1.0.0.tgz#e94ca47a79f05a26b8f4d821c8928da22f8ffa71"
-  integrity sha512-r8AwH3hI5zNI/nV1/X6XzCfmVQ0NPF+WDRbc6xQ0ZVhwsbaMPYsiKxr7wEDzWUMIN5iIMsScBs2g7oQRL0Xg3A==
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
@@ -4416,6 +4421,19 @@ axe-core@^4.3.5:
   version "4.4.1"
   resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-4.4.1.tgz#7dbdc25989298f9ad006645cd396782443757413"
   integrity sha512-gd1kmb21kwNuWr6BQz8fv6GNECPBnUasepcoLbekws23NVBLODdsClRZ+bQ8+9Uomf3Sm3+Vwn0oYG9NvwnJCw==
+
+axios-observable@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/axios-observable/-/axios-observable-1.4.0.tgz#5cb4790c6855d638bea606323a703a15391031c0"
+  integrity sha512-Q64wZSGcgmhdWlewV9ifuDZrtPfWHNUfwEvp16SA0d3D8aQ2C7VB8g2djBeF5uUFCLvAEWlT1FxB8sYdZNVaPg==
+
+axios@^0.27.2:
+  version "0.27.2"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.27.2.tgz#207658cc8621606e586c85db4b41a750e756d972"
+  integrity sha512-t+yRIyySRTp/wua5xEr+z1q60QmLq8ABsS5O9Me1AsE5dfKqgnCFzwiCZZ/cGNd1lq4/7akDWMxdhVlucjmnOQ==
+  dependencies:
+    follow-redirects "^1.14.9"
+    form-data "^4.0.0"
 
 axobject-query@^2.2.0:
   version "2.2.0"
@@ -7224,7 +7242,7 @@ flush-write-stream@^1.0.0:
     inherits "^2.0.3"
     readable-stream "^2.3.6"
 
-follow-redirects@^1.0.0:
+follow-redirects@^1.0.0, follow-redirects@^1.14.9:
   version "1.15.0"
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.15.0.tgz#06441868281c86d0dda4ad8bdaead2d02dca89d4"
   integrity sha512-aExlJShTV4qOUOL7yF1U5tvLCB0xQuudbf6toyYA0E/acBNw71mvjFTnLaRp50aQaYocMR0a/RMMBIHeZnGyjQ==
@@ -7278,6 +7296,15 @@ form-data@^3.0.0:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/form-data/-/form-data-3.0.1.tgz#ebd53791b78356a99af9a300d4282c4d5eb9755f"
   integrity sha512-RHkBKtLWUVwd7SqRIvCZMEvAMoGUp0XU+seQiZejj0COz3RI3hWP4sCv3gZWWLjJTd7rGwcsF5eKZGii0r/hbg==
+  dependencies:
+    asynckit "^0.4.0"
+    combined-stream "^1.0.8"
+    mime-types "^2.1.12"
+
+form-data@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/form-data/-/form-data-4.0.0.tgz#93919daeaf361ee529584b9b31664dc12c9fa452"
+  integrity sha512-ETEklSGi5t0QMZuiXoA/Q6vcnxcLQP5vdugSpuAyi6SVGi2clPPp+xgEhuMaHC+zGgn31Kd235W35f7Hykkaww==
   dependencies:
     asynckit "^0.4.0"
     combined-stream "^1.0.8"
