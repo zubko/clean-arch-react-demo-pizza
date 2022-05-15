@@ -22,4 +22,25 @@ export const products: Product[] = [
     price: 20,
     image: "",
   },
+  {
+    id: "4",
+    category: "drink",
+    name: "Cola",
+    price: 5,
+    image: "",
+  },
+  {
+    id: "5",
+    category: "drink",
+    name: "Juice",
+    price: 7,
+    image: "",
+  },
+  {
+    id: "6",
+    category: "side",
+    name: "Sauce",
+    price: 2,
+    image: "",
+  },
 ];
