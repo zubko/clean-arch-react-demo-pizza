@@ -53,8 +53,9 @@ export const CategoryButton = styled.button`
     css`
       background: linear-gradient(180deg, #f8ff00 0%, #3ad59f 100%);
       &:hover {
-        border-color: white;
-        color: white;
+        border-color: #ffff00;
+        color: #ffff00;
+        background: linear-gradient(180deg, #f8ff00 0%, #2a946f 100%);
       }
     `}
 `;
