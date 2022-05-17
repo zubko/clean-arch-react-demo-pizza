@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Categories presenter returns the view model with the categories 1`] = `
+Object {
+  "categories": Array [
+    Object {
+      "current": true,
+      "id": "pizza",
+      "title": "Pizza",
+    },
+    Object {
+      "current": false,
+      "id": "drink",
+      "title": "Drinks",
+    },
+    Object {
+      "current": false,
+      "id": "side",
+      "title": "Sides",
+    },
+  ],
+  "onSelectCategory": [Function],
+}
+`;
