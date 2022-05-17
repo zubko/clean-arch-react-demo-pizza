@@ -10,7 +10,9 @@ import {
 } from "../views/categories.view";
 
 const Categories: ProductCategory[] = ["pizza", "drink", "side"];
-const Translations = { en: { pizza: "Pizza", drink: "Drinks", side: "Sides" } };
+const Translations = {
+  en: { pizza: "🍕 Pizza", drink: "🍹 Drinks", side: "🍟 Sides" },
+};
 
 export const getCategories$ = currentCategory$.pipe(
   map(
@@ -19,10 +21,10 @@ export const getCategories$ = currentCategory$.pipe(
         (id): CategoryViewProps => ({
           id,
           title: Translations.en[id],
-          current: id === currentCategory,
+          selected: id === currentCategory,
+          onSelect: () => updateCurrentCategory(id),
         })
       ),
-      onSelectCategory: updateCurrentCategory,
     })
   )
 );

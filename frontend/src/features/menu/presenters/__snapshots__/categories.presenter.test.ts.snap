@@ -4,21 +4,23 @@ exports[`Categories presenter returns the view model with the categories 1`] = `
 Object {
   "categories": Array [
     Object {
-      "current": true,
       "id": "pizza",
-      "title": "Pizza",
+      "onSelect": [Function],
+      "selected": true,
+      "title": "🍕 Pizza",
     },
     Object {
-      "current": false,
       "id": "drink",
-      "title": "Drinks",
+      "onSelect": [Function],
+      "selected": false,
+      "title": "🍹 Drinks",
     },
     Object {
-      "current": false,
       "id": "side",
-      "title": "Sides",
+      "onSelect": [Function],
+      "selected": false,
+      "title": "🍟 Sides",
     },
   ],
-  "onSelectCategory": [Function],
 }
 `;
