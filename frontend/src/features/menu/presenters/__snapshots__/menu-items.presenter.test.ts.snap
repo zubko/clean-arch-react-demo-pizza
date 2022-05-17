@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Menu items presenter returns the view model with the products of the current category 1`] = `
+Object {
+  "items": Array [
+    Object {
+      "add": [Function],
+      "id": "1",
+      "price": "1€",
+      "title": "name-1",
+    },
+    Object {
+      "add": [Function],
+      "id": "2",
+      "price": "2€",
+      "title": "name-2",
+    },
+  ],
+  "loader": Object {
+    "error": false,
+    "inProgress": false,
+    "retry": [Function],
+  },
+}
+`;
