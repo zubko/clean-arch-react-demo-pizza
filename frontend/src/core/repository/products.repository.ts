@@ -12,11 +12,11 @@ import {
 import {
   createRequestsStatusOperator,
   selectIsRequestPending,
+  selectRequestStatus,
   updateRequestStatus,
   withRequestsStatus,
-  selectRequestStatus,
 } from "@ngneat/elf-requests";
-import { catchError, delay, of, tap } from "rxjs";
+import { catchError, tap } from "rxjs";
 
 import { Product, ProductCategory } from "../entities/Product";
 import { getProducts } from "../services/products.service";

@@ -1,5 +1,5 @@
-import http from "http";
 import express, { Express } from "express";
+import http from "http";
 import morgan from "morgan";
 
 import { router as productsRouter } from "./products/router";

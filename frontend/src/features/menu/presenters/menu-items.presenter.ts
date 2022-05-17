@@ -1,11 +1,11 @@
-import { combineLatest, map, switchMap } from "rxjs";
 import {
   productsByCategory$,
   productsRequestStatus$,
 } from "@app/core/repository/products.repository";
+import { combineLatest, map, switchMap } from "rxjs";
 import { currentCategory$ } from "../repository/menu.repository";
-import { MenuItemsProps } from "../views/menu-items.view";
 import { updateProducts } from "../use-cases/products.use-case";
+import { MenuItemsProps } from "../views/menu-items.view";
 
 export const getCurrentItems$ = currentCategory$.pipe(
   switchMap((category) =>

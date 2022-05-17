@@ -1,5 +1,5 @@
-import { map } from "rxjs";
 import { ProductCategory } from "@app/core/entities/Product";
+import { map } from "rxjs";
 import {
   currentCategory$,
   updateCurrentCategory,
