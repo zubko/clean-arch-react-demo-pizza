@@ -4,10 +4,8 @@ import {
   currentCategory$,
   updateCurrentCategory,
 } from "../repository/menu.repository";
-import {
-  CategoriesViewProps,
-  CategoryViewProps,
-} from "../views/categories.view";
+import { CategoriesViewProps } from "../views/categories.view";
+import { CategoryViewProps } from "../views/category.view";
 
 const Categories: ProductCategory[] = ["pizza", "drink", "side"];
 const Translations = {
