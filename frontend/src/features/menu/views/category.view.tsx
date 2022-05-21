@@ -1,3 +1,4 @@
+import React, { HTMLProps } from "react";
 import styled, { css } from "styled-components";
 
 export type CategoryViewProps = {
@@ -12,28 +13,40 @@ export const Category: React.FC<CategoryViewProps> = ({
   title,
   onSelect,
 }) => (
-  <CategoryButton onClick={onSelect} disabled={selected}>
+  <CategoryButton
+    onClick={onSelect}
+    selected={selected}
+    disabled={selected}
+    className="__hover"
+  >
     {title}
   </CategoryButton>
 );
 
-export const CategoryButton = styled.button`
-  padding: 4px 8px;
-  margin: 0 4px;
-  font-size: 20px;
-  font-weight: 600;
-  color: black;
-  border-radius: 4px;
-  border: 2px solid black;
-  background: linear-gradient(0deg, #f8ff00 0%, #3ad59f 100%);
-  ${(props) =>
-    !props.disabled &&
-    css`
-      background: linear-gradient(180deg, #f8ff00 0%, #3ad59f 100%);
-      &:hover {
-        border-color: #ffff00;
-        color: #ffff00;
-        background: linear-gradient(180deg, #f8ff00 0%, #2a946f 100%);
-      }
-    `}
-`;
+type ButtonProps = HTMLProps<HTMLButtonElement> & { selected: boolean };
+
+export const CategoryButton = styled.button<ButtonProps>(({ selected }) => [
+  css`
+    padding: 4px 8px;
+    margin: 0 4px;
+    font-size: 20px;
+    font-weight: 600;
+    color: black;
+    border-radius: 4px;
+    border: 2px solid black;
+  `,
+  selected
+    ? css`
+        border-color: #e5ec00;
+        background: linear-gradient(0deg, #f8ff00 0%, #3ad59f 100%);
+      `
+    : css`
+        background: linear-gradient(180deg, #f8ff00 0%, #3ad59f 100%);
+        &:hover,
+        .__hover {
+          border-color: #ffff00;
+          color: #ffff00;
+          background: linear-gradient(180deg, #f8ff00 0%, #2a946f 100%);
+        }
+      `,
+]);

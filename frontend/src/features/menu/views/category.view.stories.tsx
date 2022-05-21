@@ -8,7 +8,7 @@ export default {
 const props: CategoryViewProps = {
   id: "id",
   title: "Category",
-  selected: true,
+  selected: false,
   onSelect: () => alert("on select"),
 };
 
@@ -25,5 +25,10 @@ Selected.args = {
 export const NotSelected = Template.bind({});
 NotSelected.args = {
   ...props,
-  selected: false,
+};
+
+export const Hover = Template.bind({});
+Hover.parameters = { pseudo: { hover: true } };
+Hover.args = {
+  ...props,
 };
