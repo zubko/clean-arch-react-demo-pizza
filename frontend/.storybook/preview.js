@@ -1,3 +1,4 @@
+import { ThemeProvider } from "@app/core/ui/theme/theme-provider";
 import { GlobalStyle } from "../src/GlobalStyle";
 
 export const parameters = {
@@ -12,9 +13,9 @@ export const parameters = {
 
 export const decorators = [
   (Story) => (
-    <>
+    <ThemeProvider>
       <GlobalStyle />
       <Story />
-    </>
+    </ThemeProvider>
   ),
 ];
