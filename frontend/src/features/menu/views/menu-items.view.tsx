@@ -1,7 +1,7 @@
-import { ItemProps, MenuItem } from "./menu-item.view";
+import { MenuItem, MenuItemProps } from "./menu-item.view";
 
 export type MenuItemsProps = {
-  items: ItemProps[];
+  items: MenuItemProps[];
   loader: MenuItemsLoaderProps;
 };
 

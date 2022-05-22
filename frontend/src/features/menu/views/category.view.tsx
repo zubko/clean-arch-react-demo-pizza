@@ -1,3 +1,4 @@
+import { color } from "@app/core/ui/theme/api";
 import React, { HTMLProps } from "react";
 import styled, { css } from "styled-components";
 
@@ -13,12 +14,7 @@ export const Category: React.FC<CategoryViewProps> = ({
   title,
   onSelect,
 }) => (
-  <CategoryButton
-    onClick={onSelect}
-    selected={selected}
-    disabled={selected}
-    className="__hover"
-  >
+  <CategoryButton onClick={onSelect} selected={selected} disabled={selected}>
     {title}
   </CategoryButton>
 );
@@ -42,10 +38,9 @@ export const CategoryButton = styled.button<ButtonProps>(({ selected }) => [
       `
     : css`
         background: linear-gradient(180deg, #f8ff00 0%, #3ad59f 100%);
-        &:hover,
-        .__hover {
-          border-color: #ffff00;
-          color: #ffff00;
+        &:hover {
+          border-color: ${color("hover")};
+          color: ${color("hover")};
           background: linear-gradient(180deg, #f8ff00 0%, #2a946f 100%);
         }
       `,

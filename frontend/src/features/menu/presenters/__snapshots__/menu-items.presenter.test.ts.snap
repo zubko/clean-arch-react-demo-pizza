@@ -5,12 +5,16 @@ Object {
   "items": Array [
     Object {
       "add": [Function],
+      "category": "pizza",
+      "color": "#b2226c",
       "id": "1",
       "price": "1€",
       "title": "name-1",
     },
     Object {
       "add": [Function],
+      "category": "pizza",
+      "color": "#b2226c",
       "id": "2",
       "price": "2€",
       "title": "name-2",
