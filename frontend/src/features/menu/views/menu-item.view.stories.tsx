@@ -15,7 +15,9 @@ const props: MenuItemProps = {
 };
 
 const Template: ComponentStory<typeof MenuItem> = (args) => (
-  <MenuItem {...args} />
+  <div style={{ width: 320 }}>
+    <MenuItem {...args} />
+  </div>
 );
 
 export const Pizza = Template.bind({});

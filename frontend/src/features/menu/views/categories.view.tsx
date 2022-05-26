@@ -21,5 +21,5 @@ const Container = styled.div`
   background: ${gradient("menuBg")};
   padding: 8px;
   border-radius: 8px;
-  margin: 8px;
+  margin-top: 8px;
 `;

@@ -34,9 +34,7 @@ export const MenuItem = ({
 
 const Container = styled.div`
   display: flex;
-  margin: 8px;
   overflow: hidden;
-  width: 50%;
   border-radius: 8px;
   border: 2px solid ${color("menuBg2")};
   flex-direction: column;
