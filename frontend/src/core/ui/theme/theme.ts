@@ -4,6 +4,8 @@ export const Theme = {
     menuBg2: "#26c94a",
     pageBg: "white",
     hover: "#ffff00",
+    logo: "#26c94a",
+    logoNeon: "#00ff00",
   },
   gradients: {
     buttonBg: "linear-gradient(180deg, #f8ff00 0%, #3ad59f 100%)",
