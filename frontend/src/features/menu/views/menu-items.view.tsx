@@ -28,7 +28,7 @@ export const MenuItems: React.FC<MenuItemsProps> = ({ items, loader }) => (
         {loader.inProgress && <StatusMessage>Updating...</StatusMessage>}
         <ItemsContainer>
           {items.map((itemProps) => (
-            <MenuItem {...itemProps} />
+            <MenuItem key={itemProps.id} {...itemProps} />
           ))}
         </ItemsContainer>
       </div>

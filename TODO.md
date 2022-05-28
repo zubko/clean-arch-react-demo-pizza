@@ -1,7 +1,5 @@
 # List of next steps
 
-- add views to storybook
-  - menu page
 - fix warning in storybook about React 18
 - ESLint config
 - upgrade all dependencies
