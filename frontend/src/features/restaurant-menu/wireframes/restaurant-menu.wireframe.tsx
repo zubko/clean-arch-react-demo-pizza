@@ -7,7 +7,7 @@ import { Categories } from "../views/categories.view";
 import { MenuItems } from "../views/menu-items.view";
 import { MenuPage } from "../views/menu-page.view";
 
-export const MenuWireframe = () => {
+export const RestaurantMenuWireframe = () => {
   const [categories] = useObservable(getCategories$);
   const [items] = useObservable(getCurrentItems$);
   useEffect(fetchProducts, []);
