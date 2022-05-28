@@ -48,7 +48,7 @@ export const setProducts = (products: Product[]) =>
     updateRequestStatus("products", "success")
   );
 
-export const updateProducts = () => {
+export const fetchProducts = () => {
   getProducts()
     .pipe(
       tap(setProducts),

@@ -2,7 +2,7 @@ import { Product } from "@app/core/entities/Product";
 import { setProducts } from "@app/core/repository/products.repository";
 import { resetAllStores } from "@app/core/repository/repository";
 import { first } from "rxjs";
-import { updateCurrentCategory } from "../repository/menu.repository";
+import { setCurrentCategory } from "../repository/menu.repository";
 import { getCurrentItems$ } from "./menu-items.presenter";
 
 const Products: Product[] = [
@@ -35,7 +35,7 @@ describe("Menu items presenter", () => {
   });
 
   it("returns the view model with the products of the current category", () => {
-    updateCurrentCategory("pizza");
+    setCurrentCategory("pizza");
     setProducts(Products);
     getCurrentItems$
       .pipe(first())

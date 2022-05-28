@@ -4,7 +4,7 @@ import {
 } from "@app/core/repository/products.repository";
 import { combineLatest, map, switchMap } from "rxjs";
 import { currentCategory$ } from "../repository/menu.repository";
-import { updateProducts } from "../use-cases/products.use-case";
+import { fetchProducts } from "../use-cases/products.use-case";
 import { MenuItemsProps } from "../views/menu-items.view";
 
 const Colors = [
@@ -39,7 +39,7 @@ export const getCurrentItems$ = currentCategory$.pipe(
           loader: {
             inProgress: status.value === "pending",
             error: status.value === "error",
-            retry: updateProducts,
+            retry: fetchProducts,
           },
         })
       )

@@ -1,1 +1,1 @@
-export { updateProducts } from "@app/core/repository/products.repository";
+export { fetchProducts } from "@app/core/repository/products.repository";

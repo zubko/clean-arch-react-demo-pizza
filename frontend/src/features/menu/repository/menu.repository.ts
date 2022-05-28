@@ -18,6 +18,6 @@ export const currentCategory$ = store.pipe(
   select(({ currentCategory }) => currentCategory)
 );
 
-export const updateCurrentCategory = (category: ProductCategory) => {
+export const setCurrentCategory = (category: ProductCategory) => {
   store.update(setProp("currentCategory", category));
 };

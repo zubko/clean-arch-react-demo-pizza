@@ -2,7 +2,7 @@ import { ProductCategory } from "@app/core/entities/Product";
 import { map } from "rxjs";
 import {
   currentCategory$,
-  updateCurrentCategory,
+  setCurrentCategory,
 } from "../repository/menu.repository";
 import { CategoriesViewProps } from "../views/categories.view";
 import { CategoryViewProps } from "../views/category.view";
@@ -20,7 +20,7 @@ export const getCategories$ = currentCategory$.pipe(
           id,
           title: Translations.en[id],
           selected: id === currentCategory,
-          onSelect: () => updateCurrentCategory(id),
+          onSelect: () => setCurrentCategory(id),
         })
       ),
     })
