@@ -1,10 +1,13 @@
-import { CartStatus } from "@app/features/cart/views/cart-status.view";
-import { FC } from "react";
+import { ComponentType, FC } from "react";
 import styled from "styled-components";
 import { Logo } from "./logo.view";
 import { SiteTitle } from "./site-title.view";
 
-export const TopBar: FC<{}> = () => (
+type TopBarProps = {
+  CartStatus: ComponentType;
+};
+
+export const TopBar: FC<TopBarProps> = ({ CartStatus }) => (
   <Container>
     <Logo />
     <SiteTitle />

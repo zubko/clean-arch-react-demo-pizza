@@ -1,7 +1,7 @@
 # List of next steps
 
+- upgrade the existing code to the newer organization from adding cart status
 - add switch to product with re-fetching product data in background
-- add products to cart
 - display cart
 
 # Later

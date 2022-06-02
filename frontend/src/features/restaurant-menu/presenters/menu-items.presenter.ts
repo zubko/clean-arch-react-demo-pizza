@@ -2,6 +2,7 @@ import {
   productsByCategory$,
   productsRequestStatus$,
 } from "@app/core/repository/products.repository";
+import { addProductToCart } from "@app/features/cart/use-cases/add-product-to-cart";
 import { combineLatest, map, switchMap } from "rxjs";
 import { currentCategory$ } from "../repository/menu.repository";
 import { fetchProducts } from "../use-cases/products.use-case";
@@ -28,14 +29,17 @@ export const getCurrentItems$ = currentCategory$.pipe(
     combineLatest([productsByCategory$(category), productsRequestStatus$]).pipe(
       map(
         ([products, status]): MenuItemsProps => ({
-          items: products.map(({ id, name, price, category }) => ({
-            id,
-            title: name,
-            price: `${price}€`,
-            category,
-            color: getRandomColor(name),
-            add: () => alert("TODO"),
-          })),
+          items: products.map((product) => {
+            let { id, name, price, category } = product;
+            return {
+              id,
+              title: name,
+              price: `${price}€`,
+              category,
+              color: getRandomColor(name),
+              add: () => addProductToCart(product),
+            };
+          }),
           loader: {
             inProgress: status.value === "pending",
             error: status.value === "error",
