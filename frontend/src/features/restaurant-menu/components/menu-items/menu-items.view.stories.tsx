@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { MenuItemProps } from "./menu-item.view";
+import { MenuItemProps } from "../menu-item/menu-item.view";
 import { MenuItems } from "./menu-items.view";
 
 export default {

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-export const MenuPage: React.FC<React.PropsWithChildren<{}>> = ({
+export const RestaurantMenu: React.FC<React.PropsWithChildren<{}>> = ({
   children,
 }) => <Container>{children}</Container>;
 

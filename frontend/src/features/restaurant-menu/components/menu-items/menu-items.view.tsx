@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { MenuItem, MenuItemProps } from "./menu-item.view";
+import { MenuItem, MenuItemProps } from "../menu-item/menu-item.view";
 
 export type MenuItemsProps = {
   items: MenuItemProps[];

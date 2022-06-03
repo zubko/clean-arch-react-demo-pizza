@@ -1,6 +1,6 @@
 import { gradient } from "@app/core/ui/theme/api";
 import styled from "styled-components";
-import { Category, CategoryViewProps } from "./category.view";
+import { Category, CategoryViewProps } from "../category/category.view";
 
 export type CategoriesViewProps = {
   categories: CategoryViewProps[];

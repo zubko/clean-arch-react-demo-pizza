@@ -4,9 +4,9 @@ import {
 } from "@app/core/repository/products.repository";
 import { addProductToCart } from "@app/features/cart/use-cases/add-product-to-cart";
 import { combineLatest, map, switchMap } from "rxjs";
-import { currentCategory$ } from "../repository/menu.repository";
-import { fetchProducts } from "../use-cases/products.use-case";
-import { MenuItemsProps } from "../views/menu-items.view";
+import { currentCategory$ } from "../../repository/menu.repository";
+import { fetchProducts } from "../../use-cases/products.use-case";
+import { MenuItemsProps } from "./menu-items.view";
 
 const Colors = [
   "#b2226c",

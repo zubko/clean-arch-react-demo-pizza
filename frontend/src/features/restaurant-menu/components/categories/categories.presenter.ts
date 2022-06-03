@@ -3,9 +3,9 @@ import { map } from "rxjs";
 import {
   currentCategory$,
   setCurrentCategory,
-} from "../repository/menu.repository";
-import { CategoriesViewProps } from "../views/categories.view";
-import { CategoryViewProps } from "../views/category.view";
+} from "../../repository/menu.repository";
+import { CategoryViewProps } from "../category/category.view";
+import { CategoriesViewProps } from "./categories.view";
 
 const Categories: ProductCategory[] = ["pizza", "drink", "side"];
 const Translations = {

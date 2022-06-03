@@ -1,7 +1,7 @@
 import { ComponentType, FC } from "react";
 import styled from "styled-components";
-import { Logo } from "./logo.view";
-import { SiteTitle } from "./site-title.view";
+import { Logo } from "../logo/logo.view";
+import { SiteTitle } from "../site-title/site-title.view";
 
 type TopBarProps = {
   CartStatus: ComponentType;

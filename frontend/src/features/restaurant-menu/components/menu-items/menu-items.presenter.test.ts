@@ -2,7 +2,7 @@ import { Product } from "@app/core/entities/Product";
 import { setProducts } from "@app/core/repository/products.repository";
 import { resetAllStores } from "@app/core/repository/repository";
 import { getFirstValue } from "@app/core/test/observable-test-utils";
-import { setCurrentCategory } from "../repository/menu.repository";
+import { setCurrentCategory } from "../../repository/menu.repository";
 import { getCurrentItems$ } from "./menu-items.presenter";
 
 const Products: Product[] = [
