@@ -2,7 +2,7 @@ import {
   productsByCategory$,
   productsRequestStatus$,
 } from "@app/core/repository/products.repository";
-import { addProductToCart } from "@app/features/cart/use-cases/add-product-to-cart";
+import { addProductToCart } from "@app/features/cart";
 import { combineLatest, map, switchMap } from "rxjs";
 import { currentCategory$ } from "../../repository/menu.repository";
 import { fetchProducts } from "../../use-cases/products.use-case";

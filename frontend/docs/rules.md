@@ -10,3 +10,4 @@
 - The choice of storage must be abstracted by repository
 - Views cannot import wireframes, only wireframes import views (so all views still could be put to the storybook without any business logic initialization)
 - Views may have "holes" for wireframes - they may receive wireframe (or "connected view") from props or as children (which are props anyways). In storybook they should receive view with mocked view model
+- Export / import between features happens through their root index file

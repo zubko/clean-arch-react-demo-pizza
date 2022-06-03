@@ -1,4 +1,4 @@
-import { CartStatus } from "@app/features/cart/components/cart-status/cart-status.view";
+import { CartStatus } from "@app/features/cart";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { TopBar as Component } from "./top-bar.view";
 
