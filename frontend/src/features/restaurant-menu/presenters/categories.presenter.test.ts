@@ -1,5 +1,5 @@
 import { resetAllStores } from "@app/core/repository/repository";
-import { first } from "rxjs";
+import { getFirstValue } from "@app/core/test/observable-test-utils";
 import { getCategories$ } from "./categories.presenter";
 
 describe("Categories presenter", () => {
@@ -8,9 +8,29 @@ describe("Categories presenter", () => {
   });
 
   it("returns the view model with the categories", () => {
-    getCategories$
-      .pipe(first())
-      .subscribe((props) => expect(props).toMatchSnapshot())
-      .unsubscribe();
+    expect(getFirstValue(getCategories$)).toMatchInlineSnapshot(`
+      Object {
+        "categories": Array [
+          Object {
+            "id": "pizza",
+            "onSelect": [Function],
+            "selected": true,
+            "title": "🍕 Pizza",
+          },
+          Object {
+            "id": "drink",
+            "onSelect": [Function],
+            "selected": false,
+            "title": "🍹 Drinks",
+          },
+          Object {
+            "id": "side",
+            "onSelect": [Function],
+            "selected": false,
+            "title": "🍟 Sides",
+          },
+        ],
+      }
+    `);
   });
 });
