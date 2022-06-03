@@ -1,12 +1,14 @@
 import { first, Observable } from "rxjs";
 
 export const getFirstValue = <T>(observable$: Observable<T>): T => {
-  let val: T | undefined = undefined;
+  let value: T | undefined = undefined;
   observable$
     .pipe(first())
     .subscribe((v) => {
-      val = v;
+      value = v;
     })
     .unsubscribe();
-  return val as T;
+  // expecting subscribe callback to be called synchronously and set the value
+  // otherwise the unit test will fail
+  return value as unknown as T;
 };
