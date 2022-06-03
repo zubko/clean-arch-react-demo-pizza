@@ -1,7 +1,6 @@
 # List of next steps
 
 - upgrade the existing code to the newer organization from adding cart status
-- write to rules about wireframes and views
 - add exports to features
 - add switch to product with re-fetching product data in background
 - display cart
