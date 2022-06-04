@@ -23,7 +23,7 @@ export const getCurrentItems$ = currentCategory$.pipe(
               price: `${price}€`,
               category,
               imageElement: productImageElement(product),
-              LinkElement: <Link to={slug || id} />,
+              LinkElement: <Link to={`/menu/${slug || id}`} />,
               add: () => addProductToCart(product),
             };
           }),

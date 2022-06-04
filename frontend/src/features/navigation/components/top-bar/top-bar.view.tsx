@@ -1,16 +1,17 @@
 import { ComponentType, FC } from "react";
 import styled from "styled-components";
 import { Logo } from "../logo/logo.view";
-import { SiteTitle } from "../site-title/site-title.view";
+import { SiteTitle, SiteTitleProps } from "../site-title/site-title.view";
 
 type TopBarProps = {
   CartStatus: ComponentType;
+  LinkToRoot: SiteTitleProps["LinkComponent"];
 };
 
-export const TopBar: FC<TopBarProps> = ({ CartStatus }) => (
+export const TopBar: FC<TopBarProps> = ({ CartStatus, LinkToRoot }) => (
   <Container>
-    <Logo />
-    <SiteTitle />
+    <Logo LinkComponent={LinkToRoot} />
+    <SiteTitle LinkComponent={LinkToRoot} />
     <CartStatus />
   </Container>
 );

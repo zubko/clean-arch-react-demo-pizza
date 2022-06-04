@@ -1,3 +1,4 @@
+import { MockLink } from "@app/core/test/mock-link";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { SiteTitle as Component } from "./site-title.view";
 
@@ -10,3 +11,6 @@ const Template: ComponentStory<typeof Component> = (args) => (
 );
 
 export const SiteTitle = Template.bind({});
+SiteTitle.args = {
+  LinkComponent: MockLink,
+};

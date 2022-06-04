@@ -1,4 +1,3 @@
-import { CartStatusWireframe } from "@app/features/cart";
 import {
   ProductDetailsWireframe,
   RestaurantMenuWireframe,
@@ -6,12 +5,12 @@ import {
 import { FC } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { NotFound } from "../not-found/not-found.view";
-import { TopBar } from "../top-bar/top-bar.view";
+import { TopBarWireframe } from "../top-bar/top-bar.wireframe";
 
 export const NavigationWireframe: FC<{}> = () => (
   <>
-    <TopBar CartStatus={CartStatusWireframe} />
     <BrowserRouter>
+      <TopBarWireframe />
       <Routes>
         <Route index element={<RestaurantMenuWireframe />} />
         <Route path="menu">

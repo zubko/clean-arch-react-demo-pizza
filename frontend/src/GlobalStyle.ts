@@ -8,6 +8,7 @@ export const GlobalStyle = createGlobalStyle`
     outline: 0;
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
+    text-decoration: none;
   }
   #root {
     margin: 0 auto;

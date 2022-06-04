@@ -1,8 +1,16 @@
 import { color } from "@app/core/ui/theme/api";
-import { FC } from "react";
+import { ComponentType, FC, PropsWithChildren } from "react";
 import styled from "styled-components";
 
-export const SiteTitle: FC<{}> = () => <Container>Neon Pizza</Container>;
+export type SiteTitleProps = {
+  LinkComponent: ComponentType<PropsWithChildren<unknown>>;
+};
+
+export const SiteTitle: FC<SiteTitleProps> = ({ LinkComponent }) => (
+  <LinkComponent>
+    <Container>Neon Pizza</Container>
+  </LinkComponent>
+);
 
 const Container = styled.div`
   font-family: "Neonderthaw", cursive;
