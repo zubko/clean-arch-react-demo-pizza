@@ -37,3 +37,25 @@ export const upsertProductIdToCart = (productId: Product["id"]) => {
 
 export const setCartItems = (items: CartItem[]) =>
   store.update(setEntities(items));
+
+export const updateOrRemoveProductIdFromCart = (productId: Product["id"]) => {
+  store.update((state) => {
+    const entity = state.entities[productId];
+    if (!entity) {
+      return state;
+    }
+    if (entity.count > 1) {
+      const newEntity: typeof entity = { ...entity, count: entity.count - 1 };
+      return {
+        ...state,
+        entities: { ...state.entities, [entity.productId]: newEntity },
+      };
+    } else {
+      const newEntities = { ...state.entities };
+      Reflect.deleteProperty(newEntities, entity.productId);
+      const newIds = [...state.ids];
+      newIds.splice(newIds.indexOf(entity.productId), 1);
+      return { ...state, entities: newEntities, ids: newIds };
+    }
+  });
+};

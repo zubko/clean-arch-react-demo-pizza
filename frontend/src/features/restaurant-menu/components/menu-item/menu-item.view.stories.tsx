@@ -1,46 +1,34 @@
+import { MockLink } from "@app/core/test/mock-link";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { MenuItem, MenuItemProps } from "./menu-item.view";
+import { ImagePizza } from "../product-image/product-image.view";
+import { MenuItem as Component, MenuItemProps } from "./menu-item.view";
 
 export default {
-  component: MenuItem,
-} as ComponentMeta<typeof MenuItem>;
+  component: Component,
+} as ComponentMeta<typeof Component>;
 
 const props: MenuItemProps = {
   id: "id",
   title: "Title",
   price: "20,000¥",
-  category: "pizza",
-  color: "#b2226c",
+  imageElement: <ImagePizza color="#b2226c" />,
   add: () => alert("on add"),
+  LinkElement: <MockLink />,
 };
 
-const Template: ComponentStory<typeof MenuItem> = (args) => (
+const Template: ComponentStory<typeof Component> = (args) => (
   <div style={{ width: 320 }}>
-    <MenuItem {...args} />
+    <Component {...args} />
   </div>
 );
 
-export const Pizza = Template.bind({});
-Pizza.args = {
+export const MenuItem = Template.bind({});
+MenuItem.args = {
   ...props,
-  category: "pizza",
 };
 
-export const PizzaHover = Template.bind({});
-PizzaHover.args = {
+export const MenuItemHover = Template.bind({});
+MenuItemHover.args = {
   ...props,
-  category: "pizza",
 };
-PizzaHover.parameters = { pseudo: { hover: true } };
-
-export const Drink = Template.bind({});
-Drink.args = {
-  ...props,
-  category: "drink",
-};
-
-export const Side = Template.bind({});
-Side.args = {
-  ...props,
-  category: "side",
-};
+MenuItemHover.parameters = { pseudo: { hover: true } };

@@ -10,22 +10,28 @@ const Products: Product[] = [
     id: "1",
     category: "pizza",
     name: "name-1",
+    slug: "name-1",
     price: 1,
     image: "",
+    description: "description-1",
   },
   {
     id: "2",
     category: "pizza",
     name: "name-2",
+    slug: "name-2",
     price: 2,
     image: "",
+    description: "description-2",
   },
   {
     id: "3",
     category: "drink",
     name: "drink-1",
+    slug: "drink-1",
     price: 3,
     image: "",
+    description: "description-3",
   },
 ];
 
@@ -41,18 +47,28 @@ describe("Menu items presenter", () => {
       Object {
         "items": Array [
           Object {
+            "LinkElement": <Link
+              to="name-1"
+            />,
             "add": [Function],
             "category": "pizza",
-            "color": "#b2226c",
             "id": "1",
+            "imageElement": <styled.div
+              color="#b2226c"
+            />,
             "price": "1€",
             "title": "name-1",
           },
           Object {
+            "LinkElement": <Link
+              to="name-2"
+            />,
             "add": [Function],
             "category": "pizza",
-            "color": "#b2226c",
             "id": "2",
+            "imageElement": <styled.div
+              color="#b2226c"
+            />,
             "price": "2€",
             "title": "name-2",
           },

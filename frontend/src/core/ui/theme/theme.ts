@@ -1,11 +1,14 @@
 export const Theme = {
   colors: {
+    text: "black",
     menuBg1: "#2ff75b",
     menuBg2: "#26c94a",
     pageBg: "white",
-    hover: "#ffff00",
+    hoverText: "#26c94a",
+    hoverButtonText: "#ffff00",
     logo: "#26c94a",
     logoNeon: "#00ff00",
+    notFoundPizza: "#f8ff00",
   },
   gradients: {
     buttonBg: "linear-gradient(180deg, #f8ff00 0%, #3ad59f 100%)",

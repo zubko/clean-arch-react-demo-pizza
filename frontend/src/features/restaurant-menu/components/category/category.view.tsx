@@ -39,8 +39,8 @@ export const CategoryButton = styled.button<ButtonProps>(({ selected }) => [
     : css`
         background: linear-gradient(180deg, #f8ff00 0%, #3ad59f 100%);
         &:hover {
-          border-color: ${color("hover")};
-          color: ${color("hover")};
+          border-color: ${color("hoverButtonText")};
+          color: ${color("hoverButtonText")};
           background: linear-gradient(180deg, #f8ff00 0%, #2a946f 100%);
         }
       `,

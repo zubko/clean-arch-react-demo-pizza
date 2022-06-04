@@ -1,5 +1,11 @@
+import { MockLink } from "@app/core/test/mock-link";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { MenuItemProps } from "../menu-item/menu-item.view";
+import {
+  ImageDrink,
+  ImagePizza,
+  ImageSide,
+} from "../product-image/product-image.view";
 import { MenuItems } from "./menu-items.view";
 
 export default {
@@ -11,33 +17,33 @@ const items: MenuItemProps[] = [
     id: "id1",
     title: "Title 1",
     price: "20,000¥",
-    category: "pizza",
-    color: "#b2226c",
+    imageElement: <ImagePizza color="#b2226c" />,
     add: () => alert("on add"),
+    LinkElement: <MockLink />,
   },
   {
     id: "id2",
     title: "Title 2",
     price: "30,000¥",
-    category: "pizza",
-    color: "#3bce0e",
+    imageElement: <ImageSide color="#3bce0e" />,
     add: () => alert("on add"),
+    LinkElement: <MockLink />,
   },
   {
     id: "id3",
     title: "Title 3",
     price: "40,000¥",
-    category: "pizza",
-    color: "#2230b2",
+    imageElement: <ImageDrink color="#2230b2" />,
     add: () => alert("on add"),
+    LinkElement: <MockLink />,
   },
   {
     id: "id4",
     title: "Title 4",
     price: "50,000¥",
-    category: "pizza",
-    color: "#2290b2",
+    imageElement: <ImagePizza color="#2290b2" />,
     add: () => alert("on add"),
+    LinkElement: <MockLink />,
   },
 ];
 

@@ -3,26 +3,12 @@ import {
   productsRequestStatus$,
 } from "@app/core/repository/products.repository";
 import { addProductToCart } from "@app/features/cart";
+import { Link } from "react-router-dom";
 import { combineLatest, map, switchMap } from "rxjs";
 import { currentCategory$ } from "../../repository/menu.repository";
 import { fetchProducts } from "../../use-cases/products.use-case";
+import { productImageElement } from "../product-image/product-image.presenter";
 import { MenuItemsProps } from "./menu-items.view";
-
-const Colors = [
-  "#b2226c",
-  "#f075f0",
-  "#34b8e8",
-  "#26d57d",
-  "#cab724",
-  "#f027e7",
-  "#9892ec",
-  "#c16296",
-  "#4d5aa7",
-  "#54f9a9",
-];
-
-const getRandomColor = (key: string) =>
-  Colors[key.charCodeAt(0) % Colors.length];
 
 export const getCurrentItems$ = currentCategory$.pipe(
   switchMap((category) =>
@@ -30,13 +16,14 @@ export const getCurrentItems$ = currentCategory$.pipe(
       map(
         ([products, status]): MenuItemsProps => ({
           items: products.map((product) => {
-            let { id, name, price, category } = product;
+            let { id, name, price, category, slug } = product;
             return {
               id,
               title: name,
               price: `${price}€`,
               category,
-              color: getRandomColor(name),
+              imageElement: productImageElement(product),
+              LinkElement: <Link to={slug || id} />,
               add: () => addProductToCart(product),
             };
           }),

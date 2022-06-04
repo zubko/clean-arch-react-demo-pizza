@@ -4,7 +4,7 @@
 - All stories must use mocked props (no network calls etc)
 - View models from presenters must be unit tested at least with snapshots
 - Wireframes must not do any layout or styling, only composition and connecting view models to views
-- Views must not do any business or formatting logic, only layout, styling and 1-1 rendering of data from view models
+- Views must not do any business or formatting logic, only layout, styling and 1-1 rendering of data from view models, ideally they should not have any conditional operators (so there will be no need to unit test them)
 - Presenters are doing formatting and preparing the data to be displayed
 - Business logic must be placed to use cases
 - The choice of storage must be abstracted by repository
