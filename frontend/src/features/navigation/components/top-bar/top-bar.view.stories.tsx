@@ -1,3 +1,4 @@
+import { MockLink } from "@app/core/test/mock-link";
 import { CartStatus } from "@app/features/cart";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { TopBar as Component } from "./top-bar.view";
@@ -12,5 +13,6 @@ const Template: ComponentStory<typeof Component> = (args) => (
 
 export const TopBar = Template.bind({});
 TopBar.args = {
-  CartStatus: () => <CartStatus count="9+" />,
+  CartStatusComponent: () => <CartStatus count="(9+)" />,
+  LinkToRootComponent: MockLink,
 };
