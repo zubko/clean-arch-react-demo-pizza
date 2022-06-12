@@ -23,4 +23,5 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   margin: 16px 16px 0;
+  height: 58px;
 `;
