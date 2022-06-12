@@ -5,6 +5,10 @@ import {
 } from "@app/core/repository/products.repository";
 import { resetAllStores } from "@app/core/repository/repository";
 import { getFirstValue } from "@app/core/test/observable-test-utils";
+import {
+  CartItem,
+  setCartItems,
+} from "@app/features/cart/repository/cart.repository";
 import { updateRequestStatus } from "@ngneat/elf-requests";
 import { productDetailsProps$ } from "./product-details.presenter";
 
@@ -18,13 +22,43 @@ const ProductMock: Product = {
   description: "description-1",
 };
 
+const CartItemMock: CartItem = {
+  productId: "1",
+  count: 1,
+};
+
 describe("Product details presenter", () => {
   afterEach(() => {
     resetAllStores();
   });
 
-  it("returns the view model for existing product", () => {
+  it("returns the view model for existing product when it's not in cart", () => {
     setProducts([ProductMock]);
+    expect(getFirstValue(productDetailsProps$(ProductMock.slug)))
+      .toMatchInlineSnapshot(`
+      Object {
+        "details": Object {
+          "description": "description-1",
+          "imageElement": <styled.div
+            color="#b2226c"
+          />,
+          "name": "name",
+          "onAdd": [Function],
+          "onRemove": undefined,
+          "price": "1€",
+        },
+        "loader": Object {
+          "error": false,
+          "inProgress": false,
+          "retry": [Function],
+        },
+      }
+    `);
+  });
+
+  it("returns the view model for existing product when it's in cart", () => {
+    setProducts([ProductMock]);
+    setCartItems([CartItemMock]);
     expect(getFirstValue(productDetailsProps$(ProductMock.slug)))
       .toMatchInlineSnapshot(`
       Object {

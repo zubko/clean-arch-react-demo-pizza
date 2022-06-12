@@ -4,7 +4,12 @@ import {
   productRequestStatus$,
   productWithSlug$,
 } from "@app/core/repository/products.repository";
-import { addProductToCart, removeProductFromCart } from "@app/features/cart";
+import {
+  addProductToCart,
+  cartItemForProductSlug$,
+  removeProductFromCart,
+} from "@app/features/cart";
+import { CartItem } from "@app/features/cart/repository/cart.repository";
 import { combineLatestWith, map, Observable } from "rxjs";
 import { productImageElement } from "../product-image/product-image.presenter";
 import { ProductDetailsProps } from "./product-details.view";
@@ -13,12 +18,17 @@ export const productDetailsProps$ = (
   productSlug: string
 ): Observable<ProductDetailsProps> =>
   productWithSlug$(productSlug)
-    .pipe(combineLatestWith(productRequestStatus$(productSlug)))
+    .pipe(
+      combineLatestWith(
+        productRequestStatus$(productSlug),
+        cartItemForProductSlug$(productSlug)
+      )
+    )
     .pipe(
       map(
-        ([maybeProduct, status]): ProductDetailsProps => ({
+        ([maybeProduct, status, maybeCartItem]): ProductDetailsProps => ({
           details: maybeProduct
-            ? formatProductDetails(maybeProduct)
+            ? formatProductDetails(maybeProduct, maybeCartItem)
             : undefined,
           loader: {
             inProgress: status.value === "pending",
@@ -30,7 +40,8 @@ export const productDetailsProps$ = (
     );
 
 const formatProductDetails = (
-  product: Product
+  product: Product,
+  maybeCartItem: CartItem | undefined
 ): ProductDetailsProps["details"] => {
   const { name, price, description } = product;
   return {
@@ -39,6 +50,6 @@ const formatProductDetails = (
     description,
     imageElement: productImageElement(product),
     onAdd: () => addProductToCart(product),
-    onRemove: () => removeProductFromCart(product),
+    onRemove: maybeCartItem ? () => removeProductFromCart(product) : undefined,
   };
 };

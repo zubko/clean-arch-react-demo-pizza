@@ -10,7 +10,7 @@ export type ProductDetailsProps = {
         description: string;
         imageElement: ReactElement;
         onAdd: () => void;
-        onRemove: () => void;
+        onRemove: (() => void) | undefined;
       }
     | undefined;
   loader: {
@@ -34,7 +34,9 @@ export const ProductDetails: FC<ProductDetailsProps> = ({
         <p>For only: {price}</p>
         <ButtonsContainer>
           <Button onClick={onAdd}>Add</Button>
-          <Button onClick={onRemove}>Remove</Button>
+          <Button onClick={onRemove} disabled={!onRemove}>
+            Remove
+          </Button>
         </ButtonsContainer>
       </>
     ) : error ? (

@@ -1,6 +1,5 @@
 # List of next steps
 
-- disable remove button if there is no item in the cart
 - change title of add buttons if there are such items in the cart
 - display cart
 - checkout
