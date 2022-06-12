@@ -48,7 +48,7 @@ describe("Menu items presenter", () => {
         "items": Array [
           Object {
             "LinkElement": <Link
-              to="name-1"
+              to="/menu/name-1"
             />,
             "add": [Function],
             "category": "pizza",
@@ -61,7 +61,7 @@ describe("Menu items presenter", () => {
           },
           Object {
             "LinkElement": <Link
-              to="name-2"
+              to="/menu/name-2"
             />,
             "add": [Function],
             "category": "pizza",
