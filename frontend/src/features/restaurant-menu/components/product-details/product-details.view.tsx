@@ -27,6 +27,7 @@ export const ProductDetails: FC<ProductDetailsProps> = ({
   <Container>
     {name != undefined ? (
       <>
+        {inProgress && <UpdateLoader>Updating...</UpdateLoader>}
         <ImageContainer>{imageElement}</ImageContainer>
         <h2>{name}</h2>
         <p>{description}</p>
@@ -36,13 +37,13 @@ export const ProductDetails: FC<ProductDetailsProps> = ({
           <Button onClick={onRemove}>Remove</Button>
         </ButtonsContainer>
       </>
-    ) : inProgress ? (
-      <div>Loading...</div>
     ) : error ? (
       <div>
         Error while loading <Button onClick={retry}>🔄 Retry</Button>
       </div>
-    ) : null}
+    ) : (
+      <div>Loading...</div>
+    )}
   </Container>
 );
 
@@ -51,6 +52,7 @@ const Container = styled.div`
   flex-direction: column;
   row-gap: 16px;
   padding: 32px 16px 16px;
+  position: relative;
 `;
 
 const ImageContainer = styled.div`
@@ -62,4 +64,10 @@ const ImageContainer = styled.div`
 const ButtonsContainer = styled.div`
   display: flex;
   flex-direction: column;
+`;
+
+const UpdateLoader = styled.div`
+  position: absolute;
+  right: 8px;
+  top: 8px;
 `;

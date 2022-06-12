@@ -10,11 +10,22 @@ type ProductRequestData = {
   product: Product;
 };
 
-const delayed$ = of(null).pipe(delay(1000));
+const delayed$ = of(null).pipe(delay(2000));
 
-export const getProducts = (): Observable<Product[]> => {
-  const response$ = Axios.get<ProductsRequestData>(
-    "http://127.0.0.1:7000/products"
-  ).pipe(map((response) => response.data.products));
+const Endpoint = Axios.create({
+  baseURL: "http://127.0.0.1:7000/",
+});
+
+export const getProducts$ = (): Observable<Product[]> => {
+  const response$ = Endpoint.get<ProductsRequestData>("products").pipe(
+    map((response) => response.data.products)
+  );
+  return delayed$.pipe(switchMap(() => response$));
+};
+
+export const getProduct$ = (slug: Product["slug"]): Observable<Product> => {
+  const response$ = Endpoint.get<ProductsRequestData>(
+    `products?slug=${slug}`
+  ).pipe(map((response) => response.data.products[0]));
   return delayed$.pipe(switchMap(() => response$));
 };
