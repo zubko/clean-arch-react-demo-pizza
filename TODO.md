@@ -7,6 +7,7 @@
 
 # Later
 
+- add mock products generator
 - add E2E tests for existing features
 - fix warning in storybook about React 18 (Storybook itself still uses React 17, so it will take time to remove the warning completely)
 - show update status on the page without shifting the content down
