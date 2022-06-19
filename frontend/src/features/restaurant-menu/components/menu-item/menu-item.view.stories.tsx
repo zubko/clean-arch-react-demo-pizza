@@ -13,6 +13,7 @@ const props: MenuItemProps = {
   price: "20,000¥",
   imageElement: <ImagePizza color="#b2226c" />,
   add: () => alert("on add"),
+  addTitle: "Add",
   LinkElement: <MockLink />,
 };
 
@@ -32,3 +33,9 @@ MenuItemHover.args = {
   ...props,
 };
 MenuItemHover.parameters = { pseudo: { hover: true } };
+
+export const MenuItemItemInCart = Template.bind({});
+MenuItemItemInCart.args = {
+  ...props,
+  addTitle: "Add one more",
+};

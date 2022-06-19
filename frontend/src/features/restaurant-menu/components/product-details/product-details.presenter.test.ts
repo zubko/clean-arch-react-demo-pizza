@@ -38,6 +38,7 @@ describe("Product details presenter", () => {
       .toMatchInlineSnapshot(`
       Object {
         "details": Object {
+          "addTitle": "Add",
           "description": "description-1",
           "imageElement": <styled.div
             color="#b2226c"
@@ -63,6 +64,7 @@ describe("Product details presenter", () => {
       .toMatchInlineSnapshot(`
       Object {
         "details": Object {
+          "addTitle": "Add one more",
           "description": "description-1",
           "imageElement": <styled.div
             color="#b2226c"

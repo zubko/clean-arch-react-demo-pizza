@@ -8,6 +8,7 @@ export type MenuItemProps = {
   title: string;
   price: string;
   imageElement: ReactElement;
+  addTitle: string;
   add: () => void;
   LinkElement: ReactElement;
 };
@@ -18,6 +19,7 @@ export const MenuItem = ({
   price,
   imageElement,
   add,
+  addTitle,
   LinkElement,
 }: MenuItemProps) => (
   <Container key={id}>
@@ -32,7 +34,7 @@ export const MenuItem = ({
         </Price>
       </>
     )}
-    <Button onClick={add}>Add</Button>
+    <Button onClick={add}>{addTitle}</Button>
   </Container>
 );
 

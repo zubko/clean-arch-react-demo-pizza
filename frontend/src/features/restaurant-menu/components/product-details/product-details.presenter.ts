@@ -50,6 +50,7 @@ const formatProductDetails = (
     description,
     imageElement: productImageElement(product),
     onAdd: () => addProductToCart(product),
+    addTitle: maybeCartItem ? "Add one more" : "Add",
     onRemove: maybeCartItem ? () => removeProductFromCart(product) : undefined,
   };
 };

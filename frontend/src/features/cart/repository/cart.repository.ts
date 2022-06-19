@@ -24,7 +24,7 @@ persistState(store, { storage: localStorageStrategy });
 
 export const cartItems$ = store.pipe(selectAllEntities());
 
-export const cartItemWithId$ = (productId: Product["id"]) =>
+export const cartItemWithProductId$ = (productId: Product["id"]) =>
   store.pipe(selectEntity(productId));
 
 export const cartItemsTotalCount$ = cartItems$.pipe(
@@ -34,7 +34,7 @@ export const cartItemsTotalCount$ = cartItems$.pipe(
 export const cartItemForProductSlug$ = (productSlug: Product["slug"]) =>
   productWithSlug$(productSlug).pipe(
     switchMap((maybeProduct) =>
-      maybeProduct ? cartItemWithId$(maybeProduct.id) : of(undefined)
+      maybeProduct ? cartItemWithProductId$(maybeProduct.id) : of(undefined)
     )
   );
 

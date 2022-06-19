@@ -9,6 +9,7 @@ export type ProductDetailsProps = {
         price: string;
         description: string;
         imageElement: ReactElement;
+        addTitle: string;
         onAdd: () => void;
         onRemove: (() => void) | undefined;
       }
@@ -21,7 +22,15 @@ export type ProductDetailsProps = {
 };
 
 export const ProductDetails: FC<ProductDetailsProps> = ({
-  details: { name, price, description, imageElement, onAdd, onRemove } = {},
+  details: {
+    name,
+    price,
+    description,
+    imageElement,
+    onAdd,
+    addTitle,
+    onRemove,
+  } = {},
   loader: { inProgress, error, retry },
 }) => (
   <Container>
@@ -33,7 +42,7 @@ export const ProductDetails: FC<ProductDetailsProps> = ({
         <p>{description}</p>
         <p>For only: {price}</p>
         <ButtonsContainer>
-          <Button onClick={onAdd}>Add</Button>
+          <Button onClick={onAdd}>{addTitle}</Button>
           <Button onClick={onRemove} disabled={!onRemove}>
             Remove
           </Button>

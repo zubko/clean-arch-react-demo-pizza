@@ -1,8 +1,8 @@
+import React, { ReactElement } from "react";
 import styled from "styled-components";
-import { MenuItem, MenuItemProps } from "../menu-item/menu-item.view";
 
 export type MenuItemsProps = {
-  items: MenuItemProps[];
+  items: ReactElement[];
   loader: MenuItemsLoaderProps;
 };
 
@@ -14,7 +14,7 @@ export type MenuItemsLoaderProps = {
 
 export const MenuItems: React.FC<MenuItemsProps> = ({ items, loader }) => (
   <Container>
-    {!items.length ? (
+    {items.length === 0 ? (
       <>
         {loader.inProgress && <div>Loading...</div>}
         {loader.error && (
@@ -26,11 +26,7 @@ export const MenuItems: React.FC<MenuItemsProps> = ({ items, loader }) => (
     ) : (
       <div>
         {loader.inProgress && <StatusMessage>Updating...</StatusMessage>}
-        <ItemsContainer>
-          {items.map((itemProps) => (
-            <MenuItem key={itemProps.id} {...itemProps} />
-          ))}
-        </ItemsContainer>
+        <ItemsContainer>{items}</ItemsContainer>
       </div>
     )}
   </Container>

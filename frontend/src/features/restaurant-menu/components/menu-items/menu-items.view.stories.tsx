@@ -1,6 +1,6 @@
 import { MockLink } from "@app/core/test/mock-link";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { MenuItemProps } from "../menu-item/menu-item.view";
+import { MenuItem } from "../menu-item/menu-item.view";
 import {
   ImageDrink,
   ImagePizza,
@@ -12,40 +12,39 @@ export default {
   component: MenuItems,
 } as ComponentMeta<typeof MenuItems>;
 
-const items: MenuItemProps[] = [
+const items = [
   {
     id: "id1",
     title: "Title 1",
     price: "20,000¥",
     imageElement: <ImagePizza color="#b2226c" />,
-    add: () => alert("on add"),
-    LinkElement: <MockLink />,
   },
   {
     id: "id2",
     title: "Title 2",
     price: "30,000¥",
     imageElement: <ImageSide color="#3bce0e" />,
-    add: () => alert("on add"),
-    LinkElement: <MockLink />,
   },
   {
     id: "id3",
     title: "Title 3",
     price: "40,000¥",
     imageElement: <ImageDrink color="#2230b2" />,
-    add: () => alert("on add"),
-    LinkElement: <MockLink />,
   },
   {
     id: "id4",
     title: "Title 4",
     price: "50,000¥",
     imageElement: <ImagePizza color="#2290b2" />,
-    add: () => alert("on add"),
-    LinkElement: <MockLink />,
   },
-];
+].map((props) => (
+  <MenuItem
+    {...props}
+    add={() => alert("on add")}
+    addTitle="Add"
+    LinkElement={<MockLink />}
+  />
+));
 
 const Template: ComponentStory<typeof MenuItems> = (args) => (
   <MenuItems {...args} />

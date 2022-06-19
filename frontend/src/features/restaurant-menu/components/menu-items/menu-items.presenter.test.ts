@@ -46,32 +46,32 @@ describe("Menu items presenter", () => {
     expect(getFirstValue(getCurrentItems$)).toMatchInlineSnapshot(`
       Object {
         "items": Array [
-          Object {
-            "LinkElement": <Link
-              to="/menu/name-1"
-            />,
-            "add": [Function],
-            "category": "pizza",
-            "id": "1",
-            "imageElement": <styled.div
-              color="#b2226c"
-            />,
-            "price": "1€",
-            "title": "name-1",
-          },
-          Object {
-            "LinkElement": <Link
-              to="/menu/name-2"
-            />,
-            "add": [Function],
-            "category": "pizza",
-            "id": "2",
-            "imageElement": <styled.div
-              color="#b2226c"
-            />,
-            "price": "2€",
-            "title": "name-2",
-          },
+          <MenuItemWireframe
+            product={
+              Object {
+                "category": "pizza",
+                "description": "description-1",
+                "id": "1",
+                "image": "",
+                "name": "name-1",
+                "price": 1,
+                "slug": "name-1",
+              }
+            }
+          />,
+          <MenuItemWireframe
+            product={
+              Object {
+                "category": "pizza",
+                "description": "description-2",
+                "id": "2",
+                "image": "",
+                "name": "name-2",
+                "price": 2,
+                "slug": "name-2",
+              }
+            }
+          />,
         ],
         "loader": Object {
           "error": false,
