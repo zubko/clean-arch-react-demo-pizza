@@ -1,9 +1,7 @@
 # List of next steps
 
-- change title of add buttons if there are such items in the cart
 - display cart
 - checkout
-- decide to use `getSmth` or just `smth`
 
 # Later
 
