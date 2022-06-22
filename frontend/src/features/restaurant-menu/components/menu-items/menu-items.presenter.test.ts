@@ -3,7 +3,7 @@ import { setProducts } from "@app/core/repository/products.repository";
 import { resetAllStores } from "@app/core/repository/repository";
 import { getFirstValue } from "@app/core/test/observable-test-utils";
 import { setCurrentCategory } from "../../repository/menu.repository";
-import { getCurrentItems$ } from "./menu-items.presenter";
+import { currentMenuItemsProps$ } from "./menu-items.presenter";
 
 const Products: Product[] = [
   {
@@ -43,7 +43,7 @@ describe("Menu items presenter", () => {
   it("returns the view model with the products of the current category", () => {
     setCurrentCategory("pizza");
     setProducts(Products);
-    expect(getFirstValue(getCurrentItems$)).toMatchInlineSnapshot(`
+    expect(getFirstValue(currentMenuItemsProps$)).toMatchInlineSnapshot(`
       Object {
         "items": Array [
           <MenuItemWireframe

@@ -1,6 +1,6 @@
 import { resetAllStores } from "@app/core/repository/repository";
 import { getFirstValue } from "@app/core/test/observable-test-utils";
-import { getCategories$ } from "./categories.presenter";
+import { categoriesProps$ } from "./categories.presenter";
 
 describe("Categories presenter", () => {
   afterEach(() => {
@@ -8,7 +8,7 @@ describe("Categories presenter", () => {
   });
 
   it("returns the view model with the categories", () => {
-    expect(getFirstValue(getCategories$)).toMatchInlineSnapshot(`
+    expect(getFirstValue(categoriesProps$)).toMatchInlineSnapshot(`
       Object {
         "categories": Array [
           Object {

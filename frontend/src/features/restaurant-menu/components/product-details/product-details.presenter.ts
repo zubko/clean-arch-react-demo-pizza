@@ -1,12 +1,12 @@
 import { Product } from "@app/core/entities/Product";
 import {
   fetchProduct,
-  productRequestStatus$,
-  productWithSlug$,
+  getProductWithSlug$,
+  getRequestStatusForProductWithSlug$,
 } from "@app/core/repository/products.repository";
 import {
   addProductToCart,
-  cartItemForProductSlug$,
+  getCartItemForProductWithSlug$,
   removeProductFromCart,
 } from "@app/features/cart";
 import { CartItem } from "@app/features/cart/repository/cart.repository";
@@ -17,11 +17,11 @@ import { ProductDetailsProps } from "./product-details.view";
 export const productDetailsProps$ = (
   productSlug: string
 ): Observable<ProductDetailsProps> =>
-  productWithSlug$(productSlug)
+  getProductWithSlug$(productSlug)
     .pipe(
       combineLatestWith(
-        productRequestStatus$(productSlug),
-        cartItemForProductSlug$(productSlug)
+        getRequestStatusForProductWithSlug$(productSlug),
+        getCartItemForProductWithSlug$(productSlug)
       )
     )
     .pipe(

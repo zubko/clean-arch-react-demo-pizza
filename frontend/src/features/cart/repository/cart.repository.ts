@@ -1,5 +1,5 @@
 import { Product } from "@app/core/entities/Product";
-import { productWithSlug$ } from "@app/core/repository/products.repository";
+import { getProductWithSlug$ } from "@app/core/repository/products.repository";
 import { createStore } from "@ngneat/elf";
 import {
   selectAllEntities,
@@ -24,17 +24,17 @@ persistState(store, { storage: localStorageStrategy });
 
 export const cartItems$ = store.pipe(selectAllEntities());
 
-export const cartItemWithProductId$ = (productId: Product["id"]) =>
+export const getCartItemWithProductId$ = (productId: Product["id"]) =>
   store.pipe(selectEntity(productId));
 
 export const cartItemsTotalCount$ = cartItems$.pipe(
   map((items) => items.reduce((total, item) => total + item.count, 0))
 );
 
-export const cartItemForProductSlug$ = (productSlug: Product["slug"]) =>
-  productWithSlug$(productSlug).pipe(
+export const getCartItemForProductWithSlug$ = (productSlug: Product["slug"]) =>
+  getProductWithSlug$(productSlug).pipe(
     switchMap((maybeProduct) =>
-      maybeProduct ? cartItemWithProductId$(maybeProduct.id) : of(undefined)
+      maybeProduct ? getCartItemWithProductId$(maybeProduct.id) : of(undefined)
     )
   );
 

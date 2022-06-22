@@ -3,7 +3,7 @@ import { setProducts } from "@app/core/repository/products.repository";
 import { resetAllStores } from "@app/core/repository/repository";
 import { getFirstValue } from "@app/core/test/observable-test-utils";
 import { setCartItems } from "@app/features/cart/repository/cart.repository";
-import { menuItemProps$ } from "./menu-item.presenter";
+import { getMenuItemProps$ } from "./menu-item.presenter";
 
 const ProductMock: Product = {
   id: "1",
@@ -21,7 +21,8 @@ describe("Menu item presenter", () => {
   });
 
   it("returns the view model for the product when it's not in cart", () => {
-    expect(getFirstValue(menuItemProps$(ProductMock))).toMatchInlineSnapshot(`
+    expect(getFirstValue(getMenuItemProps$(ProductMock)))
+      .toMatchInlineSnapshot(`
       Object {
         "LinkElement": <Link
           to="/menu/name-1"
@@ -41,7 +42,8 @@ describe("Menu item presenter", () => {
   it("returns the view model for the product when it's in cart", () => {
     setProducts([ProductMock]);
     setCartItems([{ productId: ProductMock.id, count: 1 }]);
-    expect(getFirstValue(menuItemProps$(ProductMock))).toMatchInlineSnapshot(`
+    expect(getFirstValue(getMenuItemProps$(ProductMock)))
+      .toMatchInlineSnapshot(`
       Object {
         "LinkElement": <Link
           to="/menu/name-1"

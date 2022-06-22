@@ -34,10 +34,10 @@ persistState(store, {
   source: (store) => store.pipe(excludeKeys(["requestsStatus"])),
 });
 
-export const productsByCategory$ = (category: ProductCategory) =>
+export const getProductsByCategory$ = (category: ProductCategory) =>
   store.pipe(selectManyByPredicate((product) => product.category === category));
 
-export const productWithSlug$ = (slug: string) =>
+export const getProductWithSlug$ = (slug: string) =>
   store.pipe(selectEntityByPredicate((p) => p.slug === slug));
 
 const trackProductsRequestsStatus = createRequestsStatusOperator(store);
@@ -87,5 +87,5 @@ const upsertProduct = (product: Product) =>
     updateRequestStatus(product.slug, "success")
   );
 
-export const productRequestStatus$ = (slug: Product["slug"]) =>
+export const getRequestStatusForProductWithSlug$ = (slug: Product["slug"]) =>
   store.pipe(selectRequestStatus(slug));

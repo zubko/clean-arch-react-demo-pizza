@@ -5,7 +5,9 @@ import { map, Observable } from "rxjs";
 import { productImageElement } from "../product-image/product-image.presenter";
 import { MenuItemProps } from "./menu-item.view";
 
-export const menuItemProps$ = (product: Product): Observable<MenuItemProps> =>
+export const getMenuItemProps$ = (
+  product: Product
+): Observable<MenuItemProps> =>
   isProductInCart$(product).pipe(
     map((inCart): MenuItemProps => {
       let { id, name, price, slug } = product;

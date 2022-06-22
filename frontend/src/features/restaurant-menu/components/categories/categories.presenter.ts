@@ -12,7 +12,7 @@ const Translations = {
   en: { pizza: "🍕 Pizza", drink: "🍹 Drinks", side: "🍟 Sides" },
 };
 
-export const getCategories$ = currentCategory$.pipe(
+export const categoriesProps$ = currentCategory$.pipe(
   map(
     (currentCategory): CategoriesViewProps => ({
       categories: Categories.map(
