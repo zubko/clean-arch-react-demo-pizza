@@ -11,7 +11,6 @@
 - show update status on the page without shifting the content down
 - host FE/BE somewhere
 - keep the currency knowledge somewhere in a formatter
-- consider dropping the index file of the feature as the types cannot be reexported easily
 
 # Maybe
 
