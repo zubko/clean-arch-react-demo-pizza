@@ -5,7 +5,7 @@ import { MenuItem } from "./menu-item.view";
 
 export const MenuItemWireframe = ({ product }: { product: Product }) => {
   const [props] = useObservable(getMenuItemProps$(product), {
-    deps: [product.id],
+    deps: [product],
   });
   return <MenuItem {...props} />;
 };
