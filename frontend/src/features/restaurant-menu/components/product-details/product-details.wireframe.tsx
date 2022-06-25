@@ -10,6 +10,6 @@ export const ProductDetailsWireframe: FC<{}> = () => {
   const [props] = useObservable(productDetailsProps$(productSlug));
   useEffect(() => {
     fetchProduct(productSlug);
-  }, []);
+  }, [productSlug]);
   return <ProductDetails {...props} />;
 };

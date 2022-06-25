@@ -34,7 +34,7 @@ export const ProductDetails: FC<ProductDetailsProps> = ({
   loader: { inProgress, error, retry },
 }) => (
   <Container>
-    {name != undefined ? (
+    {name != null ? (
       <>
         {inProgress && <UpdateLoader>Updating...</UpdateLoader>}
         <ImageContainer>{imageElement}</ImageContainer>

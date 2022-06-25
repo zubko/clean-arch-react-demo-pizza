@@ -6,10 +6,6 @@ type ProductsRequestData = {
   products: Product[];
 };
 
-type ProductRequestData = {
-  product: Product;
-};
-
 const delayed$ = of(null).pipe(delay(2000));
 
 const Endpoint = Axios.create({
