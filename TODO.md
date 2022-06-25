@@ -1,16 +1,20 @@
 # List of next steps
 
-- display cart
 - checkout
+- rename Product to product file
+- fix linter warnings when running CRA
+- add page ending to the name of page components
 
 # Later
 
-- add mock products generator
+- add notifications (toast) system
+- use product mock everywhere and generate other mocks
 - add E2E tests for existing features
 - fix warning in storybook about React 18 (Storybook itself still uses React 17, so it will take time to remove the warning completely)
 - show update status on the page without shifting the content down
 - host FE/BE somewhere
 - keep the currency knowledge somewhere in a formatter
+- consider dropping the index file of the feature as the types cannot be reexported easily
 
 # Maybe
 
@@ -18,3 +22,4 @@
 - share data types between BE & FE
 - data migration or reset on the client (when stored entities aren't correct anymore)
 - entity description data with formatting including some React components
+- consider using Tailwind CSS or similar because the views are only used for presentation so the styling and the logic won't interfere
