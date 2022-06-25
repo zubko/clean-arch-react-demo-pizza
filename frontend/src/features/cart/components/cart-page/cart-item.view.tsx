@@ -28,10 +28,10 @@ export const CartItem: FC<CartItemProps> = ({
         <Field>Total: {price}</Field>
       </Fields>
     </TopRow>
-    <div>
+    <ButtonsRow>
       <Button onClick={onAdd}>One more</Button>
       <Button onClick={onRemove}>Remove</Button>
-    </div>
+    </ButtonsRow>
   </Container>
 );
 
@@ -64,4 +64,10 @@ const Field = styled.div`
   font-size: 20px;
   font-weight: 200;
   margin-top: 4px;
+`;
+
+const ButtonsRow = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 `;
