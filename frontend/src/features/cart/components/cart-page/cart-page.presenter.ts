@@ -1,5 +1,5 @@
 import { Product } from "@app/core/entities/product";
-import { productImageElement } from "@app/features/restaurant-menu/components/product-image/product-image.presenter";
+import { productImageElement } from "@app/core/ui/components/product-image.presenter";
 import { map } from "rxjs";
 import { CartItem } from "../../entities/cart-item";
 import {

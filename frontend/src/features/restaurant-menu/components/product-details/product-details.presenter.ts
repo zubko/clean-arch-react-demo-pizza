@@ -4,6 +4,7 @@ import {
   getProductWithSlug$,
   getRequestStatusForProductWithSlug$,
 } from "@app/core/repository/products.repository";
+import { productImageElement } from "@app/core/ui/components/product-image.presenter";
 import {
   addProductToCart,
   getCartItemForProductWithSlug$,
@@ -11,7 +12,6 @@ import {
 } from "@app/features/cart";
 import { CartItem } from "@app/features/cart/entities/cart-item";
 import { combineLatestWith, map, Observable } from "rxjs";
-import { productImageElement } from "../product-image/product-image.presenter";
 import { ProductDetailsProps } from "./product-details.view";
 
 export const productDetailsProps$ = (

@@ -2,7 +2,7 @@ import { makeMockCallback } from "@app/core/test/mock-callback";
 import {
   ImageDrink,
   ImagePizza,
-} from "@app/features/restaurant-menu/components/product-image/product-image.view";
+} from "@app/core/ui/components/product-image.view";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { CartPage as Component } from "./cart-page.view";
 

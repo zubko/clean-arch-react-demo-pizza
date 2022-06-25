@@ -3,9 +3,9 @@ import {
   productsRequestStatus$,
 } from "@app/core/repository/products.repository";
 import { combineLatest, map, switchMap } from "rxjs";
-import { currentCategory$ } from "../../repository/menu.repository";
-import { fetchProducts } from "../../use-cases/products.use-case";
-import { MenuItemWireframe } from "../menu-item/menu-item.wireframe";
+import { currentCategory$ } from "../../../repository/menu.repository";
+import { fetchProducts } from "../../../use-cases/products.use-case";
+import { MenuItemWireframe } from "./menu-item/menu-item.wireframe";
 import { MenuItemsProps } from "./menu-items.view";
 
 export const currentMenuItemsProps$ = currentCategory$.pipe(

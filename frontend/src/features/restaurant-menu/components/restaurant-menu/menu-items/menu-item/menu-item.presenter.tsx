@@ -1,8 +1,8 @@
 import { Product } from "@app/core/entities/product";
+import { productImageElement } from "@app/core/ui/components/product-image.presenter";
 import { addProductToCart, isProductInCart$ } from "@app/features/cart";
 import { Link } from "react-router-dom";
 import { map, Observable } from "rxjs";
-import { productImageElement } from "../product-image/product-image.presenter";
 import { MenuItemProps } from "./menu-item.view";
 
 export const getMenuItemProps$ = (

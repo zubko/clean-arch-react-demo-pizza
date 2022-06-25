@@ -1,11 +1,11 @@
 import { MockLink } from "@app/core/test/mock-link";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { MenuItem } from "../menu-item/menu-item.view";
 import {
   ImageDrink,
   ImagePizza,
   ImageSide,
-} from "../product-image/product-image.view";
+} from "@app/core/ui/components/product-image.view";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { MenuItem } from "./menu-item/menu-item.view";
 import { MenuItems } from "./menu-items.view";
 
 export default {

@@ -1,5 +1,5 @@
+import { ImagePizza } from "@app/core/ui/components/product-image.view";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { ImagePizza } from "../product-image/product-image.view";
 import { ProductDetails, ProductDetailsProps } from "./product-details.view";
 
 export default {

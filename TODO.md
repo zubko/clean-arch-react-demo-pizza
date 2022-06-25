@@ -1,7 +1,6 @@
 # List of next steps
 
 - checkout
-- add page ending to the name of page components
 
 # Later
 

@@ -1,6 +1,6 @@
 import { MockLink } from "@app/core/test/mock-link";
+import { ImagePizza } from "@app/core/ui/components/product-image.view";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { ImagePizza } from "../product-image/product-image.view";
 import { MenuItem as Component, MenuItemProps } from "./menu-item.view";
 
 export default {
