@@ -9,7 +9,7 @@ import {
   getCartItemForProductWithSlug$,
   removeProductFromCart,
 } from "@app/features/cart";
-import { CartItem } from "@app/features/cart/repository/cart.repository";
+import { CartItem } from "@app/features/cart/entities/cart-item";
 import { combineLatestWith, map, Observable } from "rxjs";
 import { productImageElement } from "../product-image/product-image.presenter";
 import { ProductDetailsProps } from "./product-details.view";

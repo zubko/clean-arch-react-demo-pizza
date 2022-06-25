@@ -1,5 +1,6 @@
 import { createStore } from "@ngneat/elf";
 import {
+  selectEntity,
   selectEntityByPredicate,
   selectManyByPredicate,
   setEntities,
@@ -39,6 +40,8 @@ export const getProductsByCategory$ = (category: ProductCategory) =>
 
 export const getProductWithSlug$ = (slug: string) =>
   store.pipe(selectEntityByPredicate((p) => p.slug === slug));
+
+export const getProductWithId$ = (id: string) => store.pipe(selectEntity(id));
 
 const trackProductsRequestsStatus = createRequestsStatusOperator(store);
 

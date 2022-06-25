@@ -13,6 +13,8 @@ const Template: ComponentStory<typeof Component> = (args) => (
 
 export const TopBar = Template.bind({});
 TopBar.args = {
-  CartStatusComponent: () => <CartStatus count="(9+)" />,
+  CartStatusComponent: () => (
+    <CartStatus count="(9+)" linkToCartPage={<MockLink />} />
+  ),
   LinkToRootComponent: MockLink,
 };

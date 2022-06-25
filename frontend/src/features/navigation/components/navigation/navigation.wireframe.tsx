@@ -1,3 +1,4 @@
+import { CartPageWireframe } from "@app/features/cart/components/cart-page/cart-page.wireframe";
 import {
   ProductDetailsWireframe,
   RestaurantMenuWireframe,
@@ -17,6 +18,7 @@ export const NavigationWireframe: FC<{}> = () => (
           <Route index element={<RestaurantMenuWireframe />} />
           <Route path=":productSlug" element={<ProductDetailsWireframe />} />
         </Route>
+        <Route path="cart" element={<CartPageWireframe />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

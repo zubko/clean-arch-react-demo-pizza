@@ -10,17 +10,15 @@ import {
 } from "@ngneat/elf-entities";
 import { localStorageStrategy, persistState } from "@ngneat/elf-persist-state";
 import { map, of, switchMap } from "rxjs";
-
-export interface CartItem {
-  productId: Product["id"];
-  count: number;
-}
+import { CartItem } from "../entities/cart-item";
 
 const store = createStore(
   { name: "cart" },
   withEntities<CartItem, "productId">({ idKey: "productId" })
 );
 persistState(store, { storage: localStorageStrategy });
+
+export { store as cartStore };
 
 export const cartItems$ = store.pipe(selectAllEntities());
 

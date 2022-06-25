@@ -5,10 +5,8 @@ import {
 } from "@app/core/repository/products.repository";
 import { resetAllStores } from "@app/core/repository/repository";
 import { getFirstValue } from "@app/core/test/observable-test-utils";
-import {
-  CartItem,
-  setCartItems,
-} from "@app/features/cart/repository/cart.repository";
+import { CartItem } from "@app/features/cart/entities/cart-item";
+import { setCartItems } from "@app/features/cart/repository/cart.repository";
 import { updateRequestStatus } from "@ngneat/elf-requests";
 import { productDetailsProps$ } from "./product-details.presenter";
 
