@@ -10,7 +10,7 @@ export type MenuItemProps = {
   imageElement: ReactElement;
   addTitle: string;
   add: () => void;
-  LinkElement: ReactElement;
+  linkElement: ReactElement;
 };
 
 export const MenuItem = ({
@@ -20,7 +20,7 @@ export const MenuItem = ({
   imageElement,
   add,
   addTitle,
-  LinkElement,
+  linkElement: LinkElement,
 }: MenuItemProps) => (
   <Container key={id}>
     {cloneElement(

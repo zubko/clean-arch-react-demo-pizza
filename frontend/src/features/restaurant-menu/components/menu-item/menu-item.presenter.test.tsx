@@ -24,14 +24,14 @@ describe("Menu item presenter", () => {
     expect(getFirstValue(getMenuItemProps$(ProductMock)))
       .toMatchInlineSnapshot(`
       Object {
-        "LinkElement": <Link
-          to="/menu/name-1"
-        />,
         "add": [Function],
         "addTitle": "Add",
         "id": "1",
         "imageElement": <styled.div
           color="#b2226c"
+        />,
+        "linkElement": <Link
+          to="/menu/name-1"
         />,
         "price": "1€",
         "title": "name-1",
@@ -45,14 +45,14 @@ describe("Menu item presenter", () => {
     expect(getFirstValue(getMenuItemProps$(ProductMock)))
       .toMatchInlineSnapshot(`
       Object {
-        "LinkElement": <Link
-          to="/menu/name-1"
-        />,
         "add": [Function],
         "addTitle": "Add one more",
         "id": "1",
         "imageElement": <styled.div
           color="#b2226c"
+        />,
+        "linkElement": <Link
+          to="/menu/name-1"
         />,
         "price": "1€",
         "title": "name-1",

@@ -42,7 +42,7 @@ const items = [
     {...props}
     add={() => alert("on add")}
     addTitle="Add"
-    LinkElement={<MockLink />}
+    linkElement={<MockLink />}
   />
 ));
 

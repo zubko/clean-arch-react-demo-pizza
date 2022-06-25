@@ -14,7 +14,7 @@ const props: MenuItemProps = {
   imageElement: <ImagePizza color="#b2226c" />,
   add: () => alert("on add"),
   addTitle: "Add",
-  LinkElement: <MockLink />,
+  linkElement: <MockLink />,
 };
 
 const Template: ComponentStory<typeof Component> = (args) => (

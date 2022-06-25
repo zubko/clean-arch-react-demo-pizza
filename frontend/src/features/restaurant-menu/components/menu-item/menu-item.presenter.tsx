@@ -16,7 +16,7 @@ export const getMenuItemProps$ = (
         title: name,
         price: `${price}€`,
         imageElement: productImageElement(product),
-        LinkElement: <Link to={`/menu/${slug || id}`} />,
+        linkElement: <Link to={`/menu/${slug || id}`} />,
         addTitle: inCart ? "Add one more" : "Add",
         add: () => addProductToCart(product),
       };
