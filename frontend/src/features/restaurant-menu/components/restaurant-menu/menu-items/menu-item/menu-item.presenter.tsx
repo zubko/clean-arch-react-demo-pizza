@@ -1,6 +1,7 @@
 import { Product } from "@app/core/entities/product";
 import { productImageElement } from "@app/core/ui/components/product-image.presenter";
-import { addProductToCart, isProductInCart$ } from "@app/features/cart";
+import { isProductInCart$ } from "@app/features/cart/use-cases/is-product-in-cart";
+import { addProductToCart } from "@app/features/cart/use-cases/update-product-in-cart";
 import { Link } from "react-router-dom";
 import { map, Observable } from "rxjs";
 import { MenuItemProps } from "./menu-item.view";

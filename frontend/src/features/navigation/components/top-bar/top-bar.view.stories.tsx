@@ -1,5 +1,5 @@
 import { MockLink } from "@app/core/test/mock-link";
-import { CartStatus } from "@app/features/cart";
+import { CartStatus } from "@app/features/cart/components/cart-status/cart-status.view";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { TopBar as Component } from "./top-bar.view";
 

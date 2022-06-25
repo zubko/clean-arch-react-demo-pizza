@@ -5,12 +5,12 @@ import {
   getRequestStatusForProductWithSlug$,
 } from "@app/core/repository/products.repository";
 import { productImageElement } from "@app/core/ui/components/product-image.presenter";
+import { CartItem } from "@app/features/cart/entities/cart-item";
+import { getCartItemForProductWithSlug$ } from "@app/features/cart/repository/cart.repository";
 import {
   addProductToCart,
-  getCartItemForProductWithSlug$,
   removeProductFromCart,
-} from "@app/features/cart";
-import { CartItem } from "@app/features/cart/entities/cart-item";
+} from "@app/features/cart/use-cases/update-product-in-cart";
 import { combineLatestWith, map, Observable } from "rxjs";
 import { ProductDetailsProps } from "./product-details.view";
 

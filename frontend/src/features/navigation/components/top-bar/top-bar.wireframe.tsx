@@ -1,4 +1,4 @@
-import { CartStatusWireframe } from "@app/features/cart";
+import { CartStatusWireframe } from "@app/features/cart/components/cart-status/cart-status.wireframe";
 import { FC, PropsWithChildren } from "react";
 import { Link } from "react-router-dom";
 import { TopBar } from "./top-bar.view";
