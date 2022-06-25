@@ -1,4 +1,4 @@
-import { Product } from "@app/core/entities/Product";
+import { Product } from "@app/core/entities/product";
 import { resetAllStores } from "@app/core/repository/repository";
 import { getFirstValue } from "@app/core/test/observable-test-utils";
 import { cartItems$, setCartItems } from "../repository/cart.repository";

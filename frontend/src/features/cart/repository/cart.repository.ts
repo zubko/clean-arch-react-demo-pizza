@@ -1,4 +1,4 @@
-import { Product } from "@app/core/entities/Product";
+import { Product } from "@app/core/entities/product";
 import { getProductWithSlug$ } from "@app/core/repository/products.repository";
 import { createStore } from "@ngneat/elf";
 import {

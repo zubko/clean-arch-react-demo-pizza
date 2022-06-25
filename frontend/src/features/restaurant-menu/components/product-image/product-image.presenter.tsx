@@ -1,4 +1,4 @@
-import { Product } from "@app/core/entities/Product";
+import { Product } from "@app/core/entities/product";
 import { ReactElement } from "react";
 import { ImageDrink, ImagePizza, ImageSide } from "./product-image.view";
 

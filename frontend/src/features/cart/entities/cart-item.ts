@@ -1,4 +1,4 @@
-import { Product } from "@app/core/entities/Product";
+import { Product } from "@app/core/entities/product";
 
 export interface CartItem {
   productId: Product["id"];

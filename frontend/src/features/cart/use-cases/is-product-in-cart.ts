@@ -1,4 +1,4 @@
-import { Product } from "@app/core/entities/Product";
+import { Product } from "@app/core/entities/product";
 import { distinct, map } from "rxjs";
 import { getCartItemWithProductId$ } from "../repository/cart.repository";
 

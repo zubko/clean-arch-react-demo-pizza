@@ -1,4 +1,4 @@
-import { Product } from "@app/core/entities/Product";
+import { Product } from "@app/core/entities/product";
 import { addProductToCart, isProductInCart$ } from "@app/features/cart";
 import { Link } from "react-router-dom";
 import { map, Observable } from "rxjs";

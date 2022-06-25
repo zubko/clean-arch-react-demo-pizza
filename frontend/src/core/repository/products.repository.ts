@@ -20,7 +20,7 @@ import {
 } from "@ngneat/elf-requests";
 import { catchError, tap } from "rxjs";
 
-import { Product, ProductCategory } from "../entities/Product";
+import { Product, ProductCategory } from "../entities/product";
 import { getProduct$, getProducts$ } from "../services/products.service";
 
 const store = createStore(

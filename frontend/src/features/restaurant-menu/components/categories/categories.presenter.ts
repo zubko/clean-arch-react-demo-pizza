@@ -1,4 +1,4 @@
-import { ProductCategory } from "@app/core/entities/Product";
+import { ProductCategory } from "@app/core/entities/product";
 import { map } from "rxjs";
 import {
   currentCategory$,

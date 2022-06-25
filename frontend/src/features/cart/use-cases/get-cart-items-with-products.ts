@@ -1,4 +1,4 @@
-import { Product } from "@app/core/entities/Product";
+import { Product } from "@app/core/entities/product";
 import { getProductWithId$ } from "@app/core/repository/products.repository";
 import { combineLatestAllowsEmpty } from "@app/core/utils/rxjs/combine-latest-allows-empty";
 import { map, mergeMap } from "rxjs";

@@ -1,6 +1,6 @@
 import Axios from "axios-observable";
 import { delay, map, Observable, of, switchMap } from "rxjs";
-import { Product } from "../entities/Product";
+import { Product } from "../entities/product";
 
 type ProductsRequestData = {
   products: Product[];
